@@ -5,12 +5,25 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
     <title>Shapes</title>
   </head>
-  <body class="flex flex-row">
-    <div class="text-cyan-50 z-10">Hello</div>
+  <body class="flex flex-col">
+    <script type="module" src="/main.js"></script>
+    <nav class="z-10 flex flex-row gap-10 justify-center text-cyan-200 h-20 text-2xl py-4">
+      <span class="">Home</span>
+      <span class="">Sphere</span>
+      <span class=" ">Cube</span>
+      <span class="">Pyramid</span>
+    </nav>
+    <div class="justify-center z-10 text-cyan-100 items-center mx-auto">
+      Learn Three JS on Browser . 
+    </div>
     <canvas class="webgl">
     </canvas>
-    <script type="module" src="/main.js"></script>
+    <div class="z-10 text-cyan-100 align-bottom">
+      <input type="color" placeholder="Pick Color" id="color-picker">
+    </div>
+ 
   </body>
 </html>
