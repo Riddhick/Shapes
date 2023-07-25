@@ -2,8 +2,16 @@ import * as THREE from 'three';
 import "./style.css";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
 
+var customColor;
+
+const button=document.getElementById('btn1');
+
+button.addEventListener("click", ()=>{
+    const col=document.getElementById("colorPicker")
+    customColor=col.value;
+    console.log(customColor)
+})
 const default_color="#00ff83";
-var color_picked;
 
 
 //Sizes
@@ -17,7 +25,7 @@ const scene=new THREE.Scene();
 //Sphere 
 const geometry=new THREE.SphereGeometry(3,128,128);
 const material=new THREE.MeshStandardMaterial({
-  color:color_picked||default_color
+  color:customColor||default_color
 })
 const mesh=new THREE.Mesh(geometry,material);
 scene.add(mesh);
@@ -65,6 +73,8 @@ window.addEventListener("resize",()=>{
 //loop
 const loop=()=>{
   controls.update();
+  scene.add(mesh);
+  //console.log(mesh.material.color)
   renderer.render(scene,camera);
   window.requestAnimationFrame(loop);
 }
